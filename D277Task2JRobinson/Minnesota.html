@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>The Great State of Minnesota</title>
+<link rel="stylesheet" href="statestyle.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<header>
+	
+	<h1>
+		<a href="minnesota.html"><img src="MNSeal.png" alt="Minnesota State Seal" class="seal"></a>
+		<span> Welcome to Minnesota!</span>
+	</h1>
+	
+	<div class = "navbar">
+		
+		<p>Cities:</p>
+		<button onclick="window.location.href='stpaul.html'">Saint Paul</button>
+		<button onclick ="window.location.href='Minneapolis.html'">Minneapolis</button>
+		<button onclick ="window.location.href='Duluth.html'">Duluth</button>
+		<button onclick ="window.location.href='404.html'">Plymouth</button>
+		
+	</div>
+</header>
+	<div class="content">
+	
+	<div class="main">
+	<h2>A warm welcome to you, traveler!</h2>
+	
+	<p>
+	Step into the enchanting embrace of Minnesota, a state that unfolds like a tapestry woven with lakes, 
+	cities, and boundless adventures. With over 10,000 lakes dotting its landscape, Minnesota beckons nature 
+	enthusiasts to explore its pristine beauty. Dive into the vibrant rhythm of the Twin Cities, where 
+	<a href="minneapolis.html">Minneapolis</a> and <a href="stpaul.html">St. Paul</a> pulse with creativity, innovation, and an unmistakable sense of community. 
+	Feel the genuine 'Minnesota Nice' hospitality that welcomes you like an old friend. 
+	Uncover the allure of the iconic Mall of America, a shopping and entertainment wonderland. 
+	Whether you're navigating the serene waters of the Boundary Waters Canoe Area or indulging in the local 
+	hotdish, Minnesota promises an authentic journey where every experience is a brushstroke on the canvas of memories.
+	</p>
+	
+	<img src="minnesota.jpg" alt="Image of Saint Paul in the winter">
+	</div>
+	
+	<div class="sidebar"> 
+	<p>
+	Have a Question? Ask it!
+	</p>
+	<label for="fname">First Name:</label><br>
+  <input type="fname" id="fname" placeholder="First Name">
+
+  <br>
+<label for="lname">Last Name:</label><br>
+  <input type="lname" id="lname" placeholder="Last Name">
+
+  <br>
+
+	
+	<label for="email1">Enter E-mail Address:</label><br>
+  <input type="email" id="email1" placeholder="Enter E-mail Address" onblur="verifyEmail()">
+
+  <br>
+
+  <label for="email2">Re-enter E-mail Address:</label><br>
+  <input type="email" id="email2" placeholder="Re-enter E-mail Address" oninput="verifyMatchingEmail()">
+	<p id="error-message" class="error"></p>
+
+  
+  <textarea class="message" id="message" placeholder="Enter Your Question Here!"></textarea>
+  
+  <br>
+
+  <button onclick="verifyFieldNotEmpty()">Send Message</button>
+
+  
+	</div>
+	
+	</div>
+<footer>
+	<table class="footer">
+		<tbody>
+		<tr>
+		<td> Careers </td>
+		<td> Contact Us </td>
+		<td> Social Media </td>
+		<td> Site Map </td>
+		</tr>
+		<tr>
+		<td> Volunteer </td>
+		<td> Upcoming Events </td>
+		<td> Library Finder </td>
+		<td> Search </td>
+		</tr>
+		<tr>
+		<td> Department Of Education </td>
+		<td> Contact Us </td>
+		<td> Voting Locations </td>
+		<td> Regulatory </td>
+		</tr>
+		</tbody>
+	</table>
+
+
+
+</footer>
+</body>
+
+
+<script>
+	var emailmatch = false;
+	document.getElementById("email2").addEventListener("paste", function(event) {
+      event.preventDefault();
+	  });
+	  
+	function verifyEmail() {
+	var emailInput = document.getElementById("email1").value;
+      var emailRegex = /^[^\s@]+@[^\s@]+\.(com|net|org)$/;
+
+      if (emailRegex.test(emailInput)) {
+        document.getElementById("error-message").innerText = "Valid email!";
+        document.getElementById("error-message").style.color = "green";
+      } else {
+        document.getElementById("error-message").innerText = "Invalid email format!";
+        document.getElementById("error-message").style.color = "red";
+		}
+	
+	};
+	  
+    function verifyMatchingEmail() {
+      
+      var email1 = document.getElementById("email1").value;
+      var email2 = document.getElementById("email2").value;
+
+      if (email1 === email2) {
+        document.getElementById("error-message").innerText = "Emails match!";
+        document.getElementById("error-message").style.color = "green";
+		emailmatch = true;
+      } else {
+        document.getElementById("error-message").innerText = "Emails do not match!";
+        document.getElementById("error-message").style.color = "red";
+		emailmatch = false;
+      }
+	  
+    };
+	
+	function verifyFieldNotEmpty() {
+	var fname = document.getElementById("fname").value;
+    var lname = document.getElementById("lname").value;
+	var email1 = document.getElementById("email1").value;
+    var email2 = document.getElementById("email2").value;
+	var message = document.getElementById("message").value;
+	var fieldsNotEmpty = false;
+	
+	if (fname !== '' && lname !== '' && email1 !== '' && email2 !== '' && message !== ''){
+	fieldsNotEmpty = true;
+	}else{
+		document.getElementById("error-message").innerText = "Missing Info!!";
+        document.getElementById("error-message").style.color = "red";
+	}
+	if (fieldsNotEmpty === true && emailmatch === true) {
+		document.getElementById("error-message").innerText = "Message Sent!!";
+        document.getElementById("error-message").style.color = "green";
+	}
+	
+	};
+  </script>
+
+
+
+
+</html>

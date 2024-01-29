@@ -1,0 +1,100 @@
+
+
+body, header {
+	font: 16pt Helvetica, Arial, sans-serif;
+	margin: 0;
+}
+header > h1 {
+padding: 10px;
+  margin: 0px;
+  border: 5px outset blue;
+  background-color: cyan;
+  align-items: middle;
+}
+
+
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-gap: 0px;
+  height: 100vh;
+}
+
+header {
+  grid-row: 1;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr;
+  height: auto;
+  background-color: lightblue;
+}
+
+.content {
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 75vw 1fr;
+  background-color: lightgreen;
+}
+.content > div {
+	border: 3px outset black;
+	padding: 5px;
+	margin: 0px;
+}
+.main {
+	background-color: orange;
+	;
+}
+.message {
+	width: 300px;
+	height: 150px;
+}
+.sidebar {
+	
+}
+
+footer {
+  grid-row: 3;
+  background-color: lightcoral;
+}
+.main > img {
+	max-width: 100%;
+}
+.seal{
+  vertical-align: middle;
+  max-width: 100%;
+  max-height: 100%;
+  width: 5%; 
+  height: auto;
+  
+}
+.footer {
+	width: 100vw;
+	border-collapse: collapse;
+    margin-bottom: 20px;
+	text-align: center;
+	margin-top: 15px;
+
+}
+.navbar {
+   
+	display: grid;
+    grid-template-columns: auto 1fr 1fr 1fr 1fr;
+    gap: 3vw; /* Adjust the gap as needed */
+    align-items: center;
+    padding: 15px, 5px;
+    border: 3px outset black;
+    width: 100%;
+    box-sizing: border-box;
+}
+.navbar button {
+	background-color: cyan;
+    font-weight: bold;
+    border: 3px outset black;
+    width: auto;
+}
+.navbar button:hover {
+	background-color: lightblue;
+	border: 3px inset black;
+}
+
