@@ -1,7 +1,10 @@
-
+*{
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 16pt;
+	margin: 0;
+}
 
 body, header {
-	font: 16pt Helvetica, Arial, sans-serif;
 	margin: 0;
 }
 header > h1 {
@@ -11,7 +14,9 @@ padding: 10px;
   background-color: cyan;
   align-items: middle;
 }
-
+#fancy {
+	font-family: "Times New Roman", Times, Serif;
+}
 
 body {
   display: grid;
@@ -43,14 +48,16 @@ header {
 }
 .main {
 	background-color: orange;
-	;
+	border: 3px outset black;
+	padding: 5px;
 }
 .message {
 	width: 300px;
 	height: 150px;
 }
-.sidebar {
-	
+aside {
+	border: 3px outset black;
+	padding: 5px
 }
 
 footer {

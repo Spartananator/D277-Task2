@@ -14,7 +14,7 @@
 		<span> Welcome to Minnesota!</span>
 	</h1>
 	
-	<div class = "navbar">
+	<nav class = "navbar">
 		
 		<p>Cities:</p>
 		<button onclick="window.location.href='stpaul.html'">Saint Paul</button>
@@ -22,11 +22,11 @@
 		<button onclick ="window.location.href='duluth.html'">Duluth</button>
 		<button onclick ="window.location.href='plymouth.html'">Plymouth</button>
 		
-	</div>
+	</nav>
 </header>
-	<div class="content">
+	<main class="content">
 	
-	<div class="main">
+	<section class="main">
 	<h2>A warm welcome to you, traveler!</h2>
 	
 	<p>
@@ -41,42 +41,43 @@
 	</p>
 	
 	<img src="minnesota.jpg" alt="Image of Saint Paul in the winter">
-	</div>
+	</section>
 	
-	<div class="sidebar"> 
-	<p>
-	Have a Question? Ask it!
-	</p>
-	<label for="fname">First Name:</label><br>
-  <input type="fname" id="fname" placeholder="First Name">
+		<aside class="sidebar"> 
+			<form action="">
+				<p>
+					Have a Question? Ask it!
+				</p>
+			  <label for="fname">First Name:</label><br>
+			  <input type="fname" id="fname" placeholder="First Name">
 
-  <br>
-<label for="lname">Last Name:</label><br>
-  <input type="lname" id="lname" placeholder="Last Name">
+			  <br>
+			  <label for="lname">Last Name:</label><br>
+			  <input type="lname" id="lname" placeholder="Last Name">
 
-  <br>
+			  <br>
 
+				
+			  <label for="email1">Enter E-mail Address:</label><br>
+			  <input type="email" id="email1" placeholder="Enter E-mail Address" onblur="verifyEmail()">
+
+			  <br>
+
+			  <label for="email2">Re-enter E-mail Address:</label><br>
+			  <input type="email" id="email2" placeholder="Re-enter E-mail Address" oninput="verifyMatchingEmail()">
+				<p id="error-message" class="error"></p>
+
+			  
+			  <textarea class="message" id="message" placeholder="Enter Your Question Here!"></textarea>
+			  
+			  <br>
+
+			  <button onclick="verifyFieldNotEmpty()">Send Message</button>
+
+			</form>
+		</aside>
 	
-	<label for="email1">Enter E-mail Address:</label><br>
-  <input type="email" id="email1" placeholder="Enter E-mail Address" onblur="verifyEmail()">
-
-  <br>
-
-  <label for="email2">Re-enter E-mail Address:</label><br>
-  <input type="email" id="email2" placeholder="Re-enter E-mail Address" oninput="verifyMatchingEmail()">
-	<p id="error-message" class="error"></p>
-
-  
-  <textarea class="message" id="message" placeholder="Enter Your Question Here!"></textarea>
-  
-  <br>
-
-  <button onclick="verifyFieldNotEmpty()">Send Message</button>
-
-  
-	</div>
-	
-	</div>
+	</main>
 <footer>
 	<table class="footer">
 		<tbody>
